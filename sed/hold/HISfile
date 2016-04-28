@@ -1,0 +1,134 @@
+ 1004  count=1;while [ $count -le 10 ];do echo "$count hello world">>file;let count++;done
+ 1005  >file 
+ 1006  count=1;while [ $count -le 10 ];do echo "$count hello world">>file;let count++;done
+ 1007  vim file 
+ 1008  ls
+ 1009  sed -n '3p' file 
+ 1010  sed -n '3,8p' file 
+ 1011  sed  '3,9s/^/#/' file 
+ 1012  sed  '3,9d' file 
+ 1013  cp /etc/passwd pass_ed.file 
+ 1014  ls
+ 1015  sed  -n '/^daemon/,/shutdown$/' pass_ed.file 
+ 1016  sed  -n '/^daemon/, /shutdown$/p' pass_ed.file 
+ 1017  sed  -n '/3, /shutdown$/p' pass_ed.file 
+ 1018  sed  -n '3, /shutdown$/p' pass_ed.file 
+ 1019  vim file 
+ 1020  ls
+ 1021  sed '/^start/,/end$/' file 
+ 1022  sed '/^start/, /end$/' file 
+ 1023  sed '/^start/, /end$/s/^/\/\//' file 
+ 1024  sed '/^start/,/end$/s/^/\/\//' file 
+ 1025  vim file 
+ 1026  seq 20
+ 1027  seq 10
+ 1028  seq 10 | sed 'n'
+ 1029  seq 10 | sed 'np'
+ 1030  seq 10
+ 1031  seq 10 | grep '[2,4,6,8,10]'
+ 1032  seq 10 | grep '^[2,4,6,8,10].'
+ 1033  seq 10 | grep '^[2,4,6,8,10]'
+ 1034  seq 10 | grep '[^2,4,6,8,10]'
+ 1035  seq 10 | grep '([2,4,6,8,10])&'
+ 1036  seq 10 | grep '[2,4,6,8,10]&'
+ 1037  seq 10 | sed -n '0~2p'
+ 1038  seq 10 | sed -n 'q~2p'
+ 1039  seq 10 | sed -n '1~2p'
+ 1040  seq 10 | sed -n '1~3p'
+ 1041  seq 10 | sed -n '0~2p'
+ 1042  seq 10 | sed -n '0~3p'
+ 1043  seq 10 | sed -n '1~5p'
+ 1044  seq 10 | sed -n '4~5p'
+ 1045  seq 10 | sed -n '5~5p'
+ 1046  seq 10 | sed -n '0~5p'
+ 1047  seq 10 | sed -n '0~1p'
+ 1048  seq 10 | sed -n '0~2p'
+ 1049  seq 10 | sed -n '0~3p'
+ 1050  seq 10 | sed -n '0~4p'
+ 1051  seq 10 | sed -n '0~5p'
+ 1052  seq 10 | sed -n '0~6p'
+ 1053  seq 10 | sed -n '1~2p'
+ 1054  seq 10 | sed -n '3~2p'
+ 1055  seq 10 | sed -n '2~2p'
+ 1056  sed '2i AAAA' file 
+ 1057  sed '2a AAAA' file 
+ 1058  sed -e '2d'  file 
+ 1059  sed -e '2d' -e '2,4'  file 
+ 1060  sed -e '2d' -e '2,4d'  file 
+ 1061  sed -e '2d' -e '2,4d'  -e '3,5d' file 
+ 1062  sed -e '2d' -e '2,4d'  -e '4,6d' file 
+ 1063  sed -e '2d' -e '4,6d' file 
+ 1064  sed -e '2,6s/hello world/~&~/' file 
+ 1065  sed -E '2,6s/.+/~&~/' file 
+ 1066  vim file 
+ 1067  touch sed
+ 1068  vim sed 
+ 1069  sed -f sed file 
+ 1070  vim sed 
+ 1071  sed -f sed file 
+ 1072  sed -E '2,6s/.+/~&~/' file 
+ 1073  echo $?
+ 1074  vim file 
+ 1075  ls
+ 1076  sed -n '/t..t/p' file 
+ 1077  vim file 
+ 1078  ls
+ 1079  vim file 
+ 1080  sed -n '/t..t/p' file 
+ 1081  vim file 
+ 1082  sed -n '/testa*/p' file 
+ 1083  sed -n '/testa+/p' file 
+ 1084  sed -n '/testa*/p' file 
+ 1085  sed -n '/testa\+/p' file 
+ 1086  sed -n '/t[eE]st/p' file 
+ 1087  vim file 
+ 1088  sed -n '/t[^eE]st/p' file 
+ 1089  vim file 
+ 1090  sed -n '/t[^eE]st/p' file 
+ 1091  sed -n '/^(tes)/s/(tes)/&aa/p' file 
+ 1092  sed -En '/^(tes)/s/(tes)/&aa/p' file 
+ 1093  sed -En '/^(tes)/s/(tes)/\1aa/p' file 
+ 1094  sed -En '/^(tes)/s/(tes)/\1QQQ/p' file 
+ 1095  vim file 
+ 1096  sed -En '/^(tes)a{2,5}/p' file 
+ 1097  sed -En '/^tesa{2,5}/p' file 
+ 1098  sed -En '/^tesa{2,5}/g' file 
+ 1099  sed -En '/^testa{2,5}/p' file 
+ 1100  sed -En '/^tes.*a{2,5}/p' file 
+ 1101  sed -En '/^tes.+a{2,5}/p' file 
+ 1102  sed -ne '/^tes/p' -ne'/a\{2,5\}/p' file 
+ 1103  sed -ne '(/^tes) \| (/a\{2,5\})/p' file 
+ 1104  sed -ne '(/^tes) \| \(/a\{2,5\}\)/p' file 
+ 1105  sed -ne '\(/^tes\) \| \(/a\{2,5\}\)/p' file 
+ 1106  sed -ne '\(/^tes\) \| \(a\{2,5\}\)/p' file 
+ 1107  vim file 
+ 1108  vim d.c
+ 1109  mkdir hold
+ 1110  cd hold/
+ 1111  cp ../file . 
+ 1112  ls
+ 1113  vim file 
+ 1114  sed '/.\+/a \ ' file 
+ 1115  sed 'G' file 
+ 1116  sed 'g' file 
+ 1117  sed 'G' file 
+ 1118  sed -i 'G' file 
+ 1119  sed  '/^$/d' file 
+ 1120  sed -i '/^$|[:sapce:]/d' file 
+ 1121  vim file 
+ 1122  sed -i '/^$/d' file 
+ 1123  vim file 
+ 1124  history 
+ 1125  history | HISfile
+ 1126  history > HISfile
+ 1127  ls
+ 1128  vim HISfile 
+ 1129  sed /^,1000/d
+ 1130  sed '/^,1000/d'
+ 1131  sed '/^,1000/d' HISfile 
+ 1132  sed -i '/^,1000/d' HISfile 
+ 1133  vim HISfile 
+ 1134  sed -i '1,1000/d' HISfile 
+ 1135  sed -i '1,1000d' HISfile 
+ 1136  vim HISfile 
+ 1137  history > HISfile

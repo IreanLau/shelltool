@@ -1,0 +1,10 @@
+total 32
+-rw-rw-r--. 1 lau lau    8 Dec 26 19:30 file
+-rw-rw-r--. 1 lau lau  321 Dec 26 19:43 file.bak
+-rw-rw-r--. 1 lau lau    0 Dec 26 20:41 filelog
+-rw-rw-r--. 1 lau lau   51 Dec 26 19:12 log
+-rw-r--r--. 1 lau lau 1470 Dec 26 18:55 passwd
+-rw-rw-r--. 1 lau lau   75 Dec 26 19:49 test1.awk
+-rwxrw-r--. 1 lau lau  237 Dec 26 20:30 test2.awk
+-rwxrw-r--. 1 lau lau  118 Dec 26 20:37 test3.awk
+-rwxrw-r--. 1 lau lau  314 Dec 26 19:45 test.awk
